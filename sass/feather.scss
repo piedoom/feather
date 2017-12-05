@@ -1,0 +1,90 @@
+// headers
+h1,h2,h3,h4,h5,h6 {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+	margin-bottom: 12px;
+	line-height: 1.2;
+}
+
+h1 {
+	font-size: 72px;
+}
+
+h2 {
+	font-size: 48px;
+}
+
+h3 {
+	font-size: 36px;
+}
+
+h4 {
+	font-size: 24px;
+}
+
+.header-image {
+	height: 50vh;
+	width: 100%;
+	background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 300px;
+}
+
+a.header-link {
+	text-decoration: none;
+	color: #414142;
+	transition: 0.2s color ease;
+
+	&:hover {
+		color: black;
+	}
+}
+
+p {
+	font-family: 'Merriweather', serif;
+	font-weight: 300;
+	line-height: 1.7;
+	font-size: 16px;
+	text-align: justify;
+	margin-bottom: 16px;
+}
+
+section {
+	margin: 46px 0;
+}	
+.date {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 300;
+	text-transform: uppercase;
+	font-size: 12px;
+	color: grey;
+	
+}
+
+.posts hr {
+	height: 1px;
+	width: calc(100% - 48px);
+	background: #edeeef;
+	height: 1px;
+	border: none;
+	margin-bottom: 48px;
+}
+
+.title-and-date {
+	h1,h2,h3,h4,h5,h6 {
+		margin-bottom: 16px;
+	}
+	margin-bottom: 24px;
+}
+
+.container {
+	max-width: 900px;
+	width: 100%;
+	margin: 0 auto;
+
+	// margin for text elements but not media
+	p, h1, h2, h3, h4, h5, h6, span {
+		padding: 0 24px;
+	}
+}

@@ -1,0 +1,12 @@
+name = "feather"
+description = "A modern blog theme"
+license = "MIT"
+homepage = "https://github.com/piedoom/feather"
+min_version = "0.2"
+
+[extra]
+feather_header_image = "/theme_images/default.gif"
+
+[author]
+name = "doomy"
+homepage = "https://alexanderlozada.com"

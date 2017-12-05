@@ -1,0 +1,5 @@
+config.toml
+content/
+static/files/
+static/images/
+public/

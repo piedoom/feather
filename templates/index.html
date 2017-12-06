@@ -16,6 +16,10 @@
       <!-- fonts -->
       <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400|Montserrat:400,700" rel="stylesheet">
 
+      <!-- js -->
+      <script src='{{ get_url(path="js/images.js") }}'></script>
+      <script src='{{ get_url(path="js/main.js") }}'></script>
+
       {% if config.generate_rss %}
         <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path="rss.xml") }}">
       {% endif %}
@@ -26,7 +30,9 @@
 
     <body>
 
-    <div class='header-image' style='background-image: url({% if config.extra.feather_header_image %}{{ config.extra.feather_header_image }}{% else %}/theme_images/default.gif{% endif %});'></div>
+    <a href="/">
+      <div class='header-image' style='background-image: url({% if config.extra.feather_header_image %}{{ config.extra.feather_header_image }}{% else %}/theme_images/default.gif{% endif %});'></div>
+    </a>
 
     {% block content %}
     <div class="container">

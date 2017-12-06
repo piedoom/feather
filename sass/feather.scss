@@ -4,6 +4,7 @@ h1,h2,h3,h4,h5,h6 {
 	font-weight: 700;
 	margin-bottom: 12px;
 	line-height: 1.2;
+	color: #414142;
 }
 
 h1 {
@@ -53,16 +54,15 @@ p {
 section {
 	margin: 46px 0;
 }	
-.date {
+.date, .info {
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 300;
 	text-transform: uppercase;
 	font-size: 12px;
-	color: grey;
-	
+	color: grey;	
 }
 
-.posts hr {
+hr {
 	height: 1px;
 	width: calc(100% - 48px);
 	background: #edeeef;
@@ -71,11 +71,11 @@ section {
 	margin-bottom: 48px;
 }
 
-.title-and-date {
+.title-and-info {
 	h1,h2,h3,h4,h5,h6 {
 		margin-bottom: 16px;
 	}
-	margin-bottom: 24px;
+	margin-bottom: 36px;
 }
 
 .container {
@@ -85,6 +85,98 @@ section {
 
 	// margin for text elements but not media
 	p, h1, h2, h3, h4, h5, h6, span {
-		padding: 0 24px;
+		padding: 0 48px;
 	}
+
+	article {
+		h1,h2,h3,h4,h5,h6 {
+			margin-top: 36px;
+			margin-bottom: 12px;
+		}
+		h1 {
+			font-size: 36px;
+		}
+		h2 {
+			font-size: 24px;
+		}
+		h3,h4,h5,h6 {
+			font-size: 18px;
+		}
+	}
+
+	pre span {
+		padding: 0 0;
+	}
+}
+
+.container img {
+	display: block;
+	opacity: 0;
+	border-radius: 4px;
+	-webkit-animation: 0.5s ease 0s normal forwards 1 fadein;
+    animation: 0.5s ease 0s normal forwards 1 fadein;
+    margin: 36px 0;
+}
+
+img.loaded {
+	opacity: 1;
+}
+
+@keyframes fadein{
+    0% { opacity:0; }
+    100% { opacity:1; }
+}
+
+@-webkit-keyframes fadein{
+    0% { opacity:0; }
+    100% { opacity:1; }
+}
+
+pre {
+  font-family: Menlo, Monaco, "Courier New", monospace;
+}
+
+pre {
+  display: block;
+  margin: 36px 0;
+  padding: 36px 48px;
+  border-radius: 4px;
+  font-size: .8rem;
+  line-height: 1.4;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f9f9f9;
+}
+
+pre code {
+  padding: 0;
+  font-size: 100%;
+  color: inherit;
+  background-color: transparent;
+}
+
+.info {
+	padding: 0 48px;
+	span {
+		padding: 0px;
+	}
+	.divider:before {
+		padding: 0 8px;
+		content: "•";
+	}
+}
+
+ a {
+ 	font-weight: bold;
+ 	color: #ed1249;
+ 	text-decoration: none;
+ }
+
+ ::selection {
+  background: rgba(237, 18, 73,0.5); /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: rgba(237, 18, 73,0.5); /* Gecko Browsers */
 }

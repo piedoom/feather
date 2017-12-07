@@ -10,18 +10,18 @@
       <title>{% block title %}{{ config.title }}{% endblock title %}</title>
 
       <!-- css -->
-      <link rel="stylesheet" href="{{ get_url(path="reset.css") }}">
-      <link rel="stylesheet" href="{{ get_url(path="feather.css") }}">
+      <link rel="stylesheet" href="{{ get_url(path="reset.css", trailing_slash=false) }}">
+      <link rel="stylesheet" href="{{ get_url(path="feather.css", trailing_slash=false) }}">
 
       <!-- fonts -->
       <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400|Montserrat:400,700" rel="stylesheet">
 
       <!-- js -->
-      <script src='{{ get_url(path="js/images.js") }}'></script>
-      <script src='{{ get_url(path="js/main.js") }}'></script>
+      <script src='{{ get_url(path="js/images.js, trailing_slash=false") }}'></script>
+      <script src='{{ get_url(path="js/main.js, trailing_slash=false") }}'></script>
 
       {% if config.generate_rss %}
-        <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path="rss.xml") }}">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path="rss.xml", trailing_slash=false) }}">
       {% endif %}
 
       {% block extra_head %}

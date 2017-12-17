@@ -23,6 +23,10 @@ h4 {
 	font-size: 24px;
 }
 
+body {
+	overflow-wrap: break-word;
+}
+
 .header-image {
 	height: 50vh;
 	width: 100%;
@@ -132,8 +136,8 @@ img.loaded {
     100% { opacity:1; }
 }
 
-pre {
-  font-family: Menlo, Monaco, "Courier New", monospace;
+pre, code {
+  font-family: "Lucida Console", Monaco, monospace;
 }
 
 pre {
@@ -148,6 +152,15 @@ pre {
   word-break: break-all;
   word-wrap: break-word;
   background-color: #f9f9f9;
+}
+
+// inline code
+code {
+  white-space: pre;
+  white-space: pre-wrap;
+  background: #edeef2;
+  border-radius: 4px;
+  padding: 2px 6px;
 }
 
 pre code {

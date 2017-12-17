@@ -42,7 +42,7 @@ a.header-link {
 	}
 }
 
-p {
+p, ul, ol {
 	font-family: 'Merriweather', serif;
 	font-weight: 300;
 	line-height: 1.7;
@@ -64,7 +64,7 @@ section {
 
 hr {
 	height: 1px;
-	width: calc(100% - 48px);
+	width: calc(100% - 96px);
 	background: #edeeef;
 	height: 1px;
 	border: none;
@@ -84,7 +84,7 @@ hr {
 	margin: 0 auto;
 
 	// margin for text elements but not media
-	p, h1, h2, h3, h4, h5, h6, span {
+	p, h1, h2, h3, h4, h5, h6, span, ul, ol {
 		padding: 0 48px;
 	}
 
@@ -179,4 +179,26 @@ pre code {
 }
 ::-moz-selection {
   background: rgba(237, 18, 73,0.5); /* Gecko Browsers */
+}
+
+			
+ul, ol {
+	p {
+		padding: 0 0 !important;
+	}
+}
+
+@media (max-width: 500px){
+	hr {
+		width: calc(100% - 32px);
+	}
+	.container {
+		// margin for text elements but not media
+		p, h1, h2, h3, h4, h5, h6, span, ul, ol {
+			padding: 0 16px;
+		}
+	}
+	.info {
+		padding: 0 16px;
+	}
 }

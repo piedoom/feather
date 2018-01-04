@@ -8,6 +8,7 @@ min_version = "0.2"
 feather_header_image = "/theme_images/default.gif"
 disqus_code = ""
 donate_link = ""
+google_analytics = ""
 
 [author]
 name = "doomy"

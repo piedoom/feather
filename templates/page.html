@@ -22,5 +22,10 @@
   		{{ page.content | safe }}
   	</article>
   </section>
+
+  {% if config.extra.disqus_code %}
+    {{ config.extra.disqus_code | safe }}
+  {% endif %}
+
 </div>
 {% endblock content %}

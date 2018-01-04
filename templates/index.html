@@ -53,6 +53,12 @@
     </div>
     {% endblock content %}
 
+    <footer>
+      Feather theme by <a href="https://github.com/piedoom/feather">doomy</a>&nbsp;&nbsp;-&nbsp;&nbsp; Built with <a href="https://github.com/Keats/gutenberg">Gutenberg</a>
+      {% if config.extra.donate_link %}&nbsp;&nbsp;-&nbsp;&nbsp; <a href={{config.extra.donate_link}}>Donate</a>
+      {% endif %}
+    </footer>
+
     </body>
 
 </html>

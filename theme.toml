@@ -6,6 +6,8 @@ min_version = "0.2"
 
 [extra]
 feather_header_image = "/theme_images/default.gif"
+disqus_code = ""
+donate_link = ""
 
 [author]
 name = "doomy"

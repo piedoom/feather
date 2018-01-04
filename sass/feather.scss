@@ -1,3 +1,6 @@
+$break-small: 500px;
+$hpadding: 48px;
+
 // headers
 h1,h2,h3,h4,h5,h6 {
 	font-family: 'Montserrat', sans-serif;
@@ -89,7 +92,7 @@ hr {
 
 	// margin for text elements but not media
 	p, h1, h2, h3, h4, h5, h6, span, ul, ol {
-		padding: 0 48px;
+		padding: 0 $hpadding;
 	}
 
 	article {
@@ -157,7 +160,7 @@ pre, code {
 		display: inline-block;
 		border-top-right-radius: 4px;
 		border-top-left-radius: 4px;
-		padding: 0 48px;
+		padding: 0 $hpadding;
 		padding-top: 16px;
 		padding-bottom: 6px;
 	}
@@ -166,7 +169,7 @@ pre, code {
 pre {
   display: block;
   margin: 36px 0;
-  padding: 36px 48px;
+  padding: 36px $hpadding;
   border-radius: 4px;
   font-size: .8rem;
   line-height: 1.4;
@@ -194,7 +197,7 @@ pre code {
 }
 
 .info {
-	padding: 0 48px;
+	padding: 0 $hpadding;
 	span {
 		padding: 0px;
 	}
@@ -224,7 +227,23 @@ ul, ol {
 	}
 }
 
-@media (max-width: 500px){
+li {
+	padding: 6px 0;
+}
+
+#disqus_thread {
+	padding: 24px $hpadding;
+}
+
+footer {
+	background: #f5f5f5;
+	text-align: center;
+	display: block;
+	padding: 24px $hpadding;
+}
+
+@media (max-width: $break-small){
+	$hpadding: 16px;
 	hr {
 		width: calc(100% - 32px);
 	}
@@ -237,4 +256,31 @@ ul, ol {
 	.info {
 		padding: 0 16px;
 	}
+	pre {
+		padding-left: $hpadding;
+		padding-right: $hpadding;
+		border-radius: 0;
+	}
+
+	.filename {
+		border-radius: none;
+		div {
+			padding-left: $hpadding;
+			padding-right: $hpadding;
+		}
+	}
+
+	#disqus_thread {
+		padding: 24px $hpadding;
+	}
+
+	footer {
+		padding-left: $hpadding;
+		padding-right: $hpadding;	
+	}
+
+	ul, ol {
+	    list-style-position: inside;
+	}
+
 }

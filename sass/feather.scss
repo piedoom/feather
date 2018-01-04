@@ -1,7 +1,36 @@
-$break-small: 500px;
-$hpadding: 48px;
+/*__           _   _               
+/ _|         | | | |              
+| |_ ___  __ _| |_| |__   ___ _ __ 
+|  _/ _ \/ _` | __| '_ \ / _ \ '__|
+| ||  __/ (_| | |_| | | |  __/ |   
+|_| \___|\__,_|\__|_| |_|\___|_|  
+*/ 
 
-// headers
+// Variables and Mixins
+$break-small: 500px; // at what point the site becomes "mobile"
+$hpadding: 48px; // The side-padding
+$hpadding-small: 16px; // The side-padding on mobile
+
+// ------------------------------------------------ //
+//					  Animations 					//
+// -------------------------------------------------//
+
+// Fade in animation
+@keyframes fadein{
+	0% { opacity:0; }
+	100% { opacity:1; }
+}
+@-webkit-keyframes fadein{
+	0% { opacity:0; }
+	100% { opacity:1; }
+}
+
+
+// ------------------------------------------------ //
+//					  Typography 					//
+// -------------------------------------------------//
+
+// Headers
 h1,h2,h3,h4,h5,h6 {
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 700;
@@ -26,29 +55,29 @@ h4 {
 	font-size: 24px;
 }
 
-body {
-	overflow-wrap: break-word;
-}
+.title-and-info {
+	margin-bottom: 36px;
 
-.header-image {
-	height: 50vh;
-	width: 100%;
-	background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 300px;
-}
-
-a.header-link {
-	text-decoration: none;
-	color: #414142;
-	transition: 0.2s color ease;
-
-	&:hover {
-		color: black;
+	h1,h2,h3,h4,h5,h6 {
+		margin-bottom: 16px;
 	}
 }
 
+// Horizonal lines
+hr {
+	height: 1px;
+	width: calc(100% - 96px);
+	background: #edeeef;
+	height: 1px;
+	border: none;
+	margin-bottom: 48px;
+
+	@media (max-width: $break-small){
+		width: calc(100% - 32px);
+	}
+}
+
+// paragraphs and lists
 p, ul, ol {
 	font-family: 'Merriweather', serif;
 	font-weight: 300;
@@ -58,10 +87,40 @@ p, ul, ol {
 	margin-bottom: 16px;
 }
 
-section {
-	margin: 46px 0;
+ul, ol {
+	p {
+		padding: 0 0 !important;
+	}
+	@media (max-width: $break-small){
+		list-style-position: inside;
+	}
+}
+
+li {
+	padding: 6px 0;
+}
+
+// Links and Selections
+a {
+	font-weight: bold;
+	color: #ed1249;
+	text-decoration: none;
+}
+
+::selection {
+	background: rgba(237, 18, 73,0.5); /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+	background: rgba(237, 18, 73,0.5); /* Gecko Browsers */
 }	
-.date, .info {
+
+// Code
+pre, code {
+	font-family: "Lucida Console", Monaco, monospace;
+}
+
+// Misc.
+.date, .info { // the small text that shows info related to dates, etc.
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 300;
 	text-transform: uppercase;
@@ -69,33 +128,36 @@ section {
 	color: grey;	
 }
 
-hr {
-	height: 1px;
-	width: calc(100% - 96px);
-	background: #edeeef;
-	height: 1px;
-	border: none;
-	margin-bottom: 48px;
+// overall rules
+body {
+	overflow-wrap: break-word;
 }
 
-.title-and-info {
-	h1,h2,h3,h4,h5,h6 {
-		margin-bottom: 16px;
-	}
-	margin-bottom: 36px;
+section {
+	margin: 46px 0;
 }
 
 .container {
 	max-width: 900px;
 	width: 100%;
 	margin: 0 auto;
-
 	// margin for text elements but not media
 	p, h1, h2, h3, h4, h5, h6, span, ul, ol {
 		padding: 0 $hpadding;
+
+		@media (max-width: $break-small){ 
+			padding: 0 $hpadding-small;
+		}
+	}
+
+	// exclude the padding from spans in code
+	pre span {
+		padding: 0 0;
 	}
 
 	article {
+		// reduce header size for items within 
+		// an article (e.g. a blog post)
 		h1,h2,h3,h4,h5,h6 {
 			margin-top: 36px;
 			margin-bottom: 12px;
@@ -110,38 +172,34 @@ hr {
 			font-size: 18px;
 		}
 	}
+}
 
-	pre span {
-		padding: 0 0;
+
+.info {
+	padding: 0 $hpadding;
+	span {
+		padding: 0px;
+	}
+	.divider:before {
+		padding: 0 8px;
+		content: "•";
+	}
+	@media (max-width: $break-small){ 
+		padding: 0 $hpadding-small;
 	}
 }
 
-.container img {
-	display: block;
-	opacity: 0;
-	border-radius: 4px;
-	-webkit-animation: 0.5s ease 0s normal forwards 1 fadein;
-    animation: 0.5s ease 0s normal forwards 1 fadein;
-    margin: 36px 0;
+#disqus_thread {
+	padding: 24px $hpadding;
+
+	@media (max-width: $break-small){
+		padding: 24px $hpadding-small;
+	}
 }
 
-img.loaded {
-	opacity: 1;
-}
-
-@keyframes fadein{
-    0% { opacity:0; }
-    100% { opacity:1; }
-}
-
-@-webkit-keyframes fadein{
-    0% { opacity:0; }
-    100% { opacity:1; }
-}
-
-pre, code {
-  font-family: "Lucida Console", Monaco, monospace;
-}
+// ------------------------------------------------ //
+//					  Code Blocks 					//
+// -------------------------------------------------//
 
 // an optional filename field that goes before a pre
 .filename {
@@ -151,7 +209,7 @@ pre, code {
 	border-top-left-radius: 4px;
 	position: relative;
 	bottom: -40px;
-	
+
 	div {
 		font-size: 14px;
 		font-family: "Lucida Console", Monaco, monospace;
@@ -164,123 +222,102 @@ pre, code {
 		padding-top: 16px;
 		padding-bottom: 6px;
 	}
-} 
 
-pre {
-  display: block;
-  margin: 36px 0;
-  padding: 36px $hpadding;
-  border-radius: 4px;
-  font-size: .8rem;
-  line-height: 1.4;
-  white-space: pre;
-  white-space: pre-wrap;
-  word-break: break-all;
-  word-wrap: break-word;
-  background-color: #f9f9f9;
-}
+	@media (max-width: $break-small) {
+		border-radius: 0;
+		div {
+			padding-left: $hpadding;
+			padding-right: $hpadding;
+			border-radius: 0;
+		}
+	}
+} 
 
 // inline code
 code {
-  white-space: pre;
-  white-space: pre-wrap;
-  background: #edeef2;
-  border-radius: 4px;
-  padding: 2px 6px;
+	white-space: pre;
+	white-space: pre-wrap;
+	background: #edeef2;
+	border-radius: 4px;
+	padding: 2px 6px;
 }
 
-pre code {
-  padding: 0;
-  font-size: 100%;
-  color: inherit;
-  background-color: transparent;
-}
-
-.info {
-	padding: 0 $hpadding;
-	span {
-		padding: 0px;
+pre {
+	display: block;
+	margin: 36px 0;
+	padding: 36px $hpadding;
+	border-radius: 4px;
+	font-size: .8rem;
+	line-height: 1.4;
+	white-space: pre;
+	white-space: pre-wrap;
+	word-break: break-all;
+	word-wrap: break-word;
+	background-color: #f9f9f9;
+	code {
+		padding: 0;
+		font-size: 100%;
+		color: inherit;
+		background-color: transparent;
 	}
-	.divider:before {
-		padding: 0 8px;
-		content: "•";
-	}
-}
-
- a {
- 	font-weight: bold;
- 	color: #ed1249;
- 	text-decoration: none;
- }
-
- ::selection {
-  background: rgba(237, 18, 73,0.5); /* WebKit/Blink Browsers */
-}
-::-moz-selection {
-  background: rgba(237, 18, 73,0.5); /* Gecko Browsers */
-}
-
-			
-ul, ol {
-	p {
-		padding: 0 0 !important;
+	@media (max-width: $break-small){ 
+		padding-left: $hpadding-small;
+		padding-right: $hpadding-small;
+		border-radius: 0;
 	}
 }
 
-li {
-	padding: 6px 0;
+// ------------------------------------------------ //
+//			     Images & Formatting				//
+// -------------------------------------------------//
+
+// Header
+.header-image {
+	height: 50vh;
+	width: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height: 300px;
 }
 
-#disqus_thread {
-	padding: 24px $hpadding;
+a.header-link {
+text-decoration: none;
+color: #414142;
+transition: 0.2s color ease;
+
+	&:hover {
+		color: black;
+	}
 }
 
+// Fade in images on load
+.container img {
+	display: block;
+	opacity: 0;
+	border-radius: 4px;
+	-webkit-animation: 0.5s ease 0s normal forwards 1 fadein;
+	animation: 0.5s ease 0s normal forwards 1 fadein;
+	margin: 36px 0;
+}
+
+img.loaded {
+	opacity: 1;
+}
+
+// ------------------------------------------------ //
+//			     		Footer						//
+// -------------------------------------------------//
+
+// Main container
 footer {
 	background: #f5f5f5;
 	text-align: center;
 	display: block;
 	padding: 24px $hpadding;
-}
 
-@media (max-width: $break-small){
-	$hpadding: 16px;
-	hr {
-		width: calc(100% - 32px);
-	}
-	.container {
-		// margin for text elements but not media
-		p, h1, h2, h3, h4, h5, h6, span, ul, ol {
-			padding: 0 16px;
-		}
-	}
-	.info {
-		padding: 0 16px;
-	}
-	pre {
-		padding-left: $hpadding;
-		padding-right: $hpadding;
-		border-radius: 0;
-	}
-
-	.filename {
-		border-radius: none;
-		div {
-			padding-left: $hpadding;
-			padding-right: $hpadding;
-		}
-	}
-
-	#disqus_thread {
-		padding: 24px $hpadding;
-	}
-
-	footer {
+	@media (max-width: $break-small){
 		padding-left: $hpadding;
 		padding-right: $hpadding;	
 	}
-
-	ul, ol {
-	    list-style-position: inside;
-	}
-
 }

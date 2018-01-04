@@ -13,7 +13,12 @@
     		{% endif %}
     		{% if page.category %}
     			<span class='divider'/>
-    			<span>{{ page.category }}</span>
+          <!-- link to page category if user is building categories -->
+          {% if config.generate_categories_pages %}
+            <span><a href="/categories/{{page.category}}">{{ page.category }}</a></span>
+          {% else %}
+    			  <span>{{ page.category }}</span>
+          {% endif %}
     		{% endif %}
     		
     	</div>

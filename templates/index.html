@@ -49,7 +49,24 @@
               <p> 
                 {{ page.content | striptags | truncate }} 
               </p>
-              <span class="date">{{ page.date | date(format="%d %B %Y") }}</span>
+
+              <!-- TODO: modularize this so we don't repeat ourselves -->
+              <div class='info'>
+                <span>{{ page.reading_time }} minute read</span>
+                {% if page.date %}
+                  <span class='divider'/>
+                  <span>{{ page.date | date(format="%d %B %Y") }}</span>
+                {% endif %}
+                {% if page.category %}
+                  <span class='divider'/>
+                  <!-- link to page category if user is building categories -->
+                  {% if config.generate_categories_pages %}
+                    <span><a href="/categories/{{page.category}}">{{ page.category }}</a></span>
+                  {% else %}
+                    <span>{{ page.category }}</span>
+                  {% endif %}
+                {% endif %}
+              </div>
             </section>
           <hr/>
         {% endfor %}

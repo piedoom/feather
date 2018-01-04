@@ -179,6 +179,14 @@ section {
 	padding: 0 $hpadding;
 	span {
 		padding: 0px;
+		a {
+			text-decoration: none;
+			color: inherit;
+			font-weight: inherit;
+			&:hover {
+				text-decoration: underline !important;
+			}
+		}
 	}
 	.divider:before {
 		padding: 0 8px;

@@ -20,8 +20,8 @@
       <script src='{{ get_url(path="js", trailing_slash=false) }}images.js'></script>
       <script src='{{ get_url(path="js", trailing_slash=false) }}main.js'></script>
 
-      {% if config.extra.google_analytics %}
-        {{ config.extra.google_analytics | safe }}
+      {% if config.extra.feather_analytics %}
+        {{ config.extra.feather_analytics | safe }}
       {% endif %}
 
       {% if config.generate_rss %}
@@ -76,7 +76,7 @@
 
     <footer>
       Feather theme by <a href="https://github.com/piedoom/feather">doomy</a>&nbsp;&nbsp;-&nbsp;&nbsp; Built with <a href="https://github.com/Keats/gutenberg">Gutenberg</a>
-      {% if config.extra.donate_link %}&nbsp;&nbsp;-&nbsp;&nbsp; <a href={{config.extra.donate_link}}>Donate</a>
+      {% if config.extra.feather_donate_link %}&nbsp;&nbsp;-&nbsp;&nbsp; <a href={{config.extra.feather_donate_link}}>Donate</a>
       {% endif %}
     </footer>
 

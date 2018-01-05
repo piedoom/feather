@@ -26,14 +26,14 @@ feather_header_image = "/theme_images/default.gif"
 
 # if you want comments, add your disqus embed code here.  
 # you can obtain a code on the disqus website.
-disqus_code = "<div id='disqus_thread'></div><script> var disqus_config = ... etc ... etc ..."
+feather_disqus_code = "<div id='disqus_thread'></div><script> var disqus_config = ... etc ... etc ..."
 
 # if you'd like people to be able to donate to you, you can include a donate link
 # to be displayed in the footer of the website.
-donate_link = "https://paypal.me/piedoomy"
+feather_donate_link = "https://paypal.me/piedoomy"
 
 # if you want analytics, add your tracking code HTML here.
-google_analytics = "<script async src='https://www.googletagmanager.com/gtag/... etc ... etc ..."
+feather_analytics = "<script async src='https://www.googletagmanager.com/gtag/... etc ... etc ..."
 ```
 
 # Live demo

@@ -36,6 +36,25 @@ feather_donate_link = "https://paypal.me/piedoomy"
 feather_analytics = "<script async src='https://www.googletagmanager.com/gtag/... etc ... etc ..."
 ```
 
+## Features
+Feather also provides several features optional.
+
+- [x] Categories page
+- [x] Tags page
+- [x] Sorting chronologically 
+- [x] Comments
+- [x] Analytics 
+- [x] Donate links
+
+## Using Categories and Tags
+In order to use categories and tags, you'll need to enable their compilation by adding the following lines to your `config.toml`
+(make sure they aren't under `[extra]`):
+
+```toml
+generate_categories_pages = true
+generate_tags_pages = true
+```
+
 # Live demo
 [My dev site](http://vaporsoft.net/) uses the latest version of feather.
 

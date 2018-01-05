@@ -109,6 +109,27 @@ strong {
 	font-weight: bold;
 }
 
+// blockquotes
+blockquote {
+	font-style: italic;
+	color: #777777;
+	border-left: 3px solid #edeeef;
+	max-width: 600px;
+	blockquote {
+		// add margin to nested blockquotes
+	    margin-left: 8px;
+	    margin-bottom: 0;
+	    p {
+	    	margin: 12px 0;
+	    }
+	}
+	p {
+		margin: 0;
+	}
+
+	margin: 36px 0;
+}
+
 // Links and Selections
 a {
 	font-weight: bold;

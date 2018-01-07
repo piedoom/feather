@@ -6,6 +6,14 @@ I know the first theme for the platform that isn't a port or just contained with
 
 Feather is *not* intended for anything other than blogs.  
 
+# Developing & Contributing
+Because feather comes with example content, you can run the theme just like any Gutenberg
+blog with `gutenberg serve`.  Your changes will autoreload!
+
+## Considerations
+Please don't edit the `content` folder directly for your own blog, use it as a theme like
+intended!
+
 # Usage
 Using feather is easy.  Install [Gutenberg](https://github.com/Keats/gutenberg) and follow 
 [the guide for creating a site and using a theme](https://www.getgutenberg.io/documentation/themes/installing-and-using-themes/).  Then,

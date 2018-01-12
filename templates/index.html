@@ -10,15 +10,15 @@
       <title>{% block title %}{{ config.title }}{% endblock title %}</title>
 
       <!-- css -->
-      <link rel="stylesheet" href="{{ get_url(path="", trailing_slash=false) }}reset.css">
-      <link rel="stylesheet" href="{{ get_url(path="", trailing_slash=false) }}feather.css">
+      <link rel="stylesheet" href="/reset.css">
+      <link rel="stylesheet" href="/feather.css">
 
       <!-- fonts -->
       <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400|Montserrat:400,700" rel="stylesheet">
 
       <!-- js -->
-      <script src='{{ get_url(path="js", trailing_slash=false) }}images.js'></script>
-      <script src='{{ get_url(path="js", trailing_slash=false) }}main.js'></script>
+      <script src='/js/images.js'></script>
+      <script src='/js/main.js'></script>
 
       {% if config.extra.feather_analytics %}
         {{ config.extra.feather_analytics | safe }}

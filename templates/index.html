@@ -61,7 +61,7 @@
                   <span class='divider'/>
                   <!-- link to page category if user is building categories -->
                   {% if config.generate_categories_pages %}
-                    <span><a href="/categories/{{page.category}}">{{ page.category }}</a></span>
+                    <span><a href="/categories/{{page.category | slugify }}">{{ page.category }}</a></span>
                   {% else %}
                     <span>{{ page.category }}</span>
                   {% endif %}

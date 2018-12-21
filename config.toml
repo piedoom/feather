@@ -1,5 +1,5 @@
 # This is an example file to help you get started.
-# This also lets you run `gutenberg serve` just in the themes directory
+# This also lets you run `zola serve` just in the themes directory
 # for easier development.
 
 # The URL the site will be built for

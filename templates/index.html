@@ -19,6 +19,7 @@
       <!-- js -->
       <script src='/js/images.js'></script>
       <script src='/js/main.js'></script>
+      <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
       {% if config.extra.feather_analytics %}
         {{ config.extra.feather_analytics | safe }}
@@ -75,7 +76,7 @@
     {% endblock content %}
 
     <footer>
-      Feather theme by <a href="https://github.com/piedoom/feather">doomy</a>&nbsp;&nbsp;-&nbsp;&nbsp; Built with <a href="https://www.getzola.org/">Zola</a>
+      Feather theme by <a href="https://github.com/piedoom/feather">doomy</a>&nbsp;&nbsp;-&nbsp;&nbsp; Built with <a href="https://github.com/Keats/gutenberg">Gutenberg</a>
       {% if config.extra.feather_donate_link %}&nbsp;&nbsp;-&nbsp;&nbsp; <a href={{config.extra.feather_donate_link}}>Donate</a>
       {% endif %}
     </footer>

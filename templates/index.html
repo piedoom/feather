@@ -48,7 +48,7 @@
                 <h3 class="title"> {{ page.title }} </h3>
               </a>
               <p> 
-                {{ page.content | safe | striptags | truncate }} 
+                {{ page.summary | safe | striptags | truncate }} 
               </p>
 
               <!-- TODO: modularize this so we don't repeat ourselves -->

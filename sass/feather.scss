@@ -311,6 +311,9 @@ pre {
 
 // Header
 .header-image {
+	@media (max-width: $break-small){ 
+		height: 30vh;
+	}
 	height: 50vh;
 	width: 100%;
 	background-position: center;

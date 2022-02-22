@@ -42,6 +42,10 @@
       style='background-image: url({% if config.extra.feather_header_image %}{{ config.extra.feather_header_image }}{% else %}/theme_images/default.gif{% endif %});'>
     </div>
   </a>
+  <div class="container">
+    <br>
+    <button class="theme-switcher">light/dark toggle</button>
+  </div>
 
   {% block content %}
   <div class="container">
@@ -78,12 +82,48 @@
   {% endblock content %}
 
   <footer>
-    Feather theme by <a href="https://github.com/piedoom/feather">doomy</a>&nbsp;&nbsp;-&nbsp;&nbsp; Built with <a
-      href="https://github.com/Keats/gutenberg">Gutenberg</a>
-    {% if config.extra.feather_donate_link %}&nbsp;&nbsp;-&nbsp;&nbsp; <a
-      href={{config.extra.feather_donate_link}}>Donate</a>
-    {% endif %}
+    Feather theme by <a href="https://doomy.org">doomy</a>&nbsp;&nbsp;-&nbsp;&nbsp; Built with <a
+      href="https://getzola.org">Zola</a>
   </footer>
+
+  <script>
+    function change_theme(theme) {
+      if (theme == "light") {
+        document.body.classList.remove("dark");
+      } else if (theme == "dark") {
+        document.body.classList.add("dark");
+      }
+      localStorage.setItem("theme", theme);
+    }
+
+    window.addEventListener('load', () => {
+      // Select the button
+      const theme = (function () {
+        const stored = localStorage.getItem("theme");
+        if (localStorage == null) {
+          if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            return "dark";
+          } else {
+            return "light";
+          }
+        } else {
+          return stored;
+        }
+      })();
+
+      change_theme(theme);
+
+      // Listen for a click on the button 
+      document.querySelector(".theme-switcher").addEventListener("click", function () {
+        if (!document.body.classList.contains("dark")) {
+          change_theme("dark");
+        } else {
+          change_theme("light");
+        }
+      });
+
+    });
+  </script>
 
 </body>
 

@@ -1,0 +1,25 @@
+body {
+    --contrast: #2b303b;
+    --contrast-med: #777777;
+
+    --background: #ffffff;
+    --background-med: #f4f5f7;
+
+    --border: #eceff3;
+
+    --accent: #ed1249;
+    --accent-trans: #ed124957;
+}
+
+body.dark {
+    --contrast: #f7f9fc;
+    --contrast-med: #e3e3e9;
+
+    --background: #111622;
+    --background-med: #191e2c;
+
+    --border: #212633;
+
+    --accent: #ed1249;
+    --accent-trans: #ed124991;
+}

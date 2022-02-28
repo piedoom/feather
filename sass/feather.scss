@@ -263,6 +263,13 @@ section {
 	}
 }
 
+.chapter {
+	display: flex;
+	justify-content: space-between;
+	gap: 1em;
+	margin: 1em 0;
+}
+
 #disqus_thread {
 	@media (max-width: $break-small) {
 	}
@@ -311,25 +318,46 @@ code {
 }
 
 pre {
+	border: solid 1px var(--border);
 	padding: 1em;
 	display: block;
 	margin: 36px 0;
 	border-radius: 4px;
-	font-size: 1rem;
+	font-size: 0.85rem;
 	line-height: 1.4;
 	white-space: pre;
 	white-space: pre-wrap;
 	word-break: break-all;
 	word-wrap: break-word;
-	background-color: var(--background-med);
+	position: relative;
+	z-index: -100;
+	background-color: var(--background-med) !important;
+
+	@media (max-width: $break-small) {
+		border-radius: 0;
+	}
+
 	code {
 		padding: 0;
 		font-size: 100%;
 		color: inherit;
 		background-color: transparent;
 	}
-	@media (max-width: $break-small) {
-		border-radius: 0;
+}
+article {
+	> pre,
+	> .filename {
+		box-sizing: border-box;
+		@media (min-width: 1024px) {
+			width: 130%;
+			right: 15%;
+			font-size: 1rem;
+		}
+	}
+	blockquote {
+		box-sizing: border-box;
+		padding-left: 1em;
+		border-left: 4px solid var(--accent);
 	}
 }
 
@@ -412,4 +440,23 @@ footer {
 	background: var(--background-med);
 	text-align: center;
 	display: block;
+}
+
+sup.footnote-reference {
+	&::before {
+		content: "[";
+	}
+	&::after {
+		content: "]";
+	}
+}
+
+.footnote-definition {
+	.footnote-definition-label {
+		font-size: 1.2rem;
+		font-weight: bold;
+	}
+	p {
+		font-size: 0.8rem;
+	}
 }

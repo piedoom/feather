@@ -1,16 +1,14 @@
 {% extends "index.html" %}
-
+{% import "macros.html" as m %}
 {% block content %}
 <div class='container'>
 	<section class="post">
 		<div class="title-and-info">
 			<h2>{{ page.title }}</h2>
 			<div class="info">
-
 				<span>{{ page.date | date(format="%Y - %b %d") }}</span>
 				<span class='divider' />
 				<span>{{ page.reading_time }} minute read</span>
-
 				{% if page.category %}
 				<span class='divider' />
 				<!-- link to page category if user is building categories -->
@@ -20,17 +18,25 @@
 				<span>{{ page.category }}</span>
 				{% endif %}
 				{% endif %}
-
 			</div>
 		</div>
 		<article>
+			{% set prev = false %}
+			{% set next = false %}
+			{% if page.extra.prev %}
+			{% set prev = page.extra.prev %}
+			{% endif %}
+			{% if page.extra.next %}
+			{% set next = page.extra.next %}
+			{% endif %}
+
+			{{ m::chapter(prev=prev, next=next) }}
 			{{ page.content | safe }}
+			{{ m::chapter(prev=prev, next=next) }}
 		</article>
 	</section>
-
 	{% if config.extra.feather_disqus_code %}
 	{{ config.extra.feather_disqus_code | safe }}
 	{% endif %}
-
 </div>
 {% endblock content %}

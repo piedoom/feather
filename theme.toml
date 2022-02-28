@@ -2,14 +2,13 @@ name = "feather"
 description = "A modern blog theme"
 license = "MIT"
 homepage = "https://github.com/piedoom/feather"
-min_version = "0.5.1"
+min_version = "0.11.0"
 
 [extra]
 feather_header_image = "/theme_images/default.gif"
 feather_disqus_code = ""
-feather_donate_link = ""
 feather_analytics = ""
 
 [author]
 name = "doomy"
-homepage = "https://alexanderlozada.com"
+homepage = "https://doomy.org"

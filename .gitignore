@@ -1,3 +1,5 @@
 static/files/
 static/images/
 public/
+static/syntax-theme-dark.css
+static/syntax-theme-light.css

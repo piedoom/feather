@@ -40,24 +40,30 @@
 
 <body>
 
+  <div class="flex padded">
+    <div class="flex fill vcenter">
+      <a href="/">
+        <h4>{{ config.title }}</h4>
+      </a>
+    </div>
+    <button class="theme-switcher">theme</button>
+  </div>
+
   <a href="/">
-    <div class='header-image'
-      style='background-image: url({% if config.extra.feather_header_image %}{{ config.extra.feather_header_image }}{% else %}/theme_images/default.gif{% endif %});'>
+    <div class='header-image' style='background-image: url(/theme_images/default.gif);'>
     </div>
   </a>
-  <div class="container">
-    <br>
-    <button class="theme-switcher">light/dark toggle</button>
-  </div>
+
+
 
   {% block content %}
   <div class="container">
     <div class="posts">
       {% for page in section.pages %}
       {% if not page.extra.hidden %}
-      <section>
+      <div class="post">
         <a class='header-link' href="{{ page.path }}">
-          <h3 class="title"> {{ page.title }} </h3>
+          <h4 class="title"> {{ page.title }} </h4>
         </a>
         <p>
           {{ page.content | safe | striptags | truncate }}
@@ -65,9 +71,7 @@
 
         <!-- TODO: modularize this so we don't repeat ourselves -->
         <div class='info'>
-          <span>{{ page.date | date(format="%Y - %b %d") }}</span>
-          <span class='divider' />
-          <span>{{ page.reading_time }} minute read</span>
+          <span>{{ page.date | date(format="%Y %b %d") }}</span>
           {% if page.category %}
           <span class='divider' />
           <!-- link to page category if user is building categories -->
@@ -78,7 +82,7 @@
           {% endif %}
           {% endif %}
         </div>
-      </section>
+      </div>
       <hr />
       {% endif %}
       {% endfor %}

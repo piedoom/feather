@@ -46,9 +46,19 @@ h5,
 h6 {
 	font-family: "Montserrat", sans-serif;
 	font-weight: 700;
-	margin-bottom: 12px;
 	line-height: 1.2;
 	color: var(--contrast);
+}
+
+p {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin-bottom: 12px;
+	}
 }
 
 h1 {
@@ -87,11 +97,14 @@ hr {
 	background: var(--border);
 	height: 1px;
 	border: none;
-	margin-bottom: 48px;
 
 	@media (max-width: $break-small) {
 		width: calc(100% - 32px);
 	}
+}
+
+p hr {
+	margin-bottom: 48px;
 }
 
 // paragraphs and lists
@@ -102,7 +115,7 @@ ol {
 	font-weight: 300;
 	line-height: 1.7;
 	font-size: 16px;
-	text-align: justify;
+	text-align: start;
 	margin-bottom: 16px;
 }
 
@@ -174,7 +187,7 @@ code {
 	// the small text that shows info related to dates, etc.
 	font-family: "Montserrat", sans-serif;
 	font-weight: 300;
-	text-transform: uppercase;
+	// text-transform: uppercase;
 	font-size: 12px;
 	color: var(--contrast-med);
 }
@@ -186,8 +199,23 @@ body {
 	background: var(--background);
 }
 
+.posts {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+	margin: 2em 0;
+	.post {
+		flex-direction: column;
+		display: flex;
+		gap: 0.5em;
+	}
+	p {
+		margin: 0;
+	}
+}
+
 section {
-	margin: 48px 0;
+	margin: 2em 0;
 }
 
 .container {
@@ -367,15 +395,23 @@ article {
 
 // Header
 .header-image {
-	@media (max-width: $break-small) {
-		height: 30vh;
-	}
 	height: 50vh;
 	width: 100%;
 	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	min-height: 300px;
+	background-repeat: repeat;
+	// background-size: auto;
+	height: 3px;
+	background-position: 100% 0;
+	animation: animatedBackground 2s linear alternate infinite;
+}
+
+@keyframes animatedBackground {
+	0% {
+		background-position: 0 0;
+	}
+	100% {
+		background-position: 0 -100%;
+	}
 }
 
 a.header-link {
@@ -428,6 +464,15 @@ img.loaded {
 	padding: 0.5em 0.8em;
 	border-radius: 3px;
 	cursor: pointer;
+	&::before {
+		content: "dark ";
+	}
+}
+
+.dark .theme-switcher {
+	&::before {
+		content: "light ";
+	}
 }
 
 // ------------------------------------------------ //
@@ -458,5 +503,22 @@ sup.footnote-reference {
 	}
 	p {
 		font-size: 0.8rem;
+	}
+}
+
+//////
+.flex {
+	display: flex;
+	&.fill {
+		flex: 1;
+	}
+	&.vcenter {
+		align-items: center;
+	}
+	&.hcenter {
+		justify-items: center;
+	}
+	&.padded {
+		padding: 1em;
 	}
 }

@@ -3,6 +3,7 @@ description = "A modern blog theme"
 license = "MIT"
 homepage = "https://github.com/piedoom/feather"
 min_version = "0.11.0"
+demo = "https://vaporsoft.net/"
 
 [extra]
 feather_header_image = "/theme_images/default.gif"

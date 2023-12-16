@@ -1,0 +1,23 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+
+<div class="container">
+  <section>
+    <h2>#{{ term.name }}</h2>
+  </section>
+  <div class="posts">
+    {% for page in term.pages %}
+    <a class='header-link' href="{{ page.path }}">
+      <h4 class="title"> {{ page.title }} </h4>
+    </a>
+    <p>
+      {{ page.content | safe | striptags | truncate }}
+    </p>
+    {{ m::tags(taxonomy=page.taxonomies['tags']) }}
+    <hr />
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %}

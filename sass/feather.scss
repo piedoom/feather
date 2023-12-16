@@ -6,10 +6,17 @@
 |_| \___|\__,_|\__|_| |_|\___|_|  
 */
 
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,wght@1,200..900;1,700&family=Source+Serif+4:opsz,ital,wght@0,200..900;1,700&display=swap");
 @import "colors";
 
 // Variables and Mixins
 $break-small: 500px; // at what point the site becomes "mobile"
+
+$base-font-size: 18px;
+
+$font-body: "Source Serif 4", serif;
+$font-title: "Inter", sans-serif;
+$font-code: "Lucida Console", Monaco, monospace;
 
 // ------------------------------------------------ //
 //					  Animations 					//
@@ -44,9 +51,9 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: "Montserrat", sans-serif;
-	font-weight: 700;
-	line-height: 1.2;
+	font-family: $font-title;
+	font-weight: 800;
+	line-height: 1.1;
 	color: var(--contrast);
 }
 
@@ -57,28 +64,28 @@ p {
 	h4,
 	h5,
 	h6 {
-		margin-bottom: 12px;
+		margin-bottom: 1em;
 	}
 }
 
 h1 {
-	font-size: 72px;
+	font-size: 3em;
 }
 
 h2 {
-	font-size: 48px;
+	font-size: 2.5em;
 }
 
 h3 {
-	font-size: 36px;
+	font-size: 2em;
 }
 
 h4 {
-	font-size: 24px;
+	font-size: 1.5em;
 }
 
 .title-and-info {
-	margin-bottom: 36px;
+	margin-bottom: 2em;
 
 	h1,
 	h2,
@@ -86,7 +93,7 @@ h4 {
 	h4,
 	h5,
 	h6 {
-		margin-bottom: 16px;
+		margin-bottom: 0.5em;
 	}
 }
 
@@ -94,29 +101,29 @@ h4 {
 hr {
 	height: 1px;
 	width: 100%;
-	background: var(--border);
+	background: var(--border-weak);
 	height: 1px;
 	border: none;
 
 	@media (max-width: $break-small) {
-		width: calc(100% - 32px);
+		width: calc(100% - 2em);
 	}
 }
 
 p hr {
-	margin-bottom: 48px;
+	margin-bottom: 2em;
 }
 
 // paragraphs and lists
 p,
 ul,
 ol {
-	font-family: "Merriweather", serif;
+	font-family: $font-body;
 	font-weight: 300;
-	line-height: 1.7;
-	font-size: 16px;
+	line-height: 1.5;
+	font-size: 1em;
 	text-align: start;
-	margin-bottom: 16px;
+	margin-bottom: 1em;
 }
 
 ul,
@@ -129,10 +136,6 @@ ol {
 	}
 }
 
-li {
-	padding: 6px 0;
-}
-
 // text styles
 em {
 	font-style: italic;
@@ -140,27 +143,6 @@ em {
 
 strong {
 	font-weight: bold;
-}
-
-// blockquotes
-blockquote {
-	font-style: italic;
-	color: var(--contrast-med);
-	border-left: 3px solid var(--background);
-	max-width: 600px;
-	blockquote {
-		// add margin to nested blockquotes
-		margin-left: 8px;
-		margin-bottom: 0;
-		p {
-			margin: 12px 0;
-		}
-	}
-	p {
-		margin: 0;
-	}
-
-	margin: 36px 0;
 }
 
 // Links and Selections
@@ -178,25 +160,35 @@ a {
 // Code
 pre,
 code {
-	font-family: "Lucida Console", Monaco, monospace;
+	font-family: $font-code;
 }
 
 // Misc.
 .date,
 .info {
 	// the small text that shows info related to dates, etc.
-	font-family: "Montserrat", sans-serif;
-	font-weight: 300;
+	font-family: $font-title;
+	font-weight: 500;
 	// text-transform: uppercase;
-	font-size: 12px;
-	color: var(--contrast-med);
+	font-size: 0.85em;
+	color: var(--contrast-weak);
 }
 
 // overall rules
 body {
+	font-size: $base-font-size;
 	overflow-wrap: break-word;
 	color: var(--contrast);
 	background: var(--background);
+	min-height: 100vh;
+	> .root {
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+	}
+	.container {
+		flex: 1;
+	}
 }
 
 .posts {
@@ -253,27 +245,27 @@ section {
 		h4,
 		h5,
 		h6 {
-			margin-top: 36px;
-			margin-bottom: 12px;
+			margin-top: 2rem;
+			margin-bottom: 1rem;
 		}
 		h1 {
-			font-size: 36px;
+			font-size: 2em;
 		}
 		h2 {
-			font-size: 24px;
+			font-size: 1.5em;
 		}
 		h3,
 		h4,
 		h5,
 		h6 {
-			font-size: 18px;
+			font-size: 1em;
 		}
 	}
 }
 
 .info {
 	span {
-		padding: 0px;
+		// padding: 0px;
 		a {
 			text-decoration: none;
 			color: inherit;
@@ -298,11 +290,6 @@ section {
 	margin: 1em 0;
 }
 
-#disqus_thread {
-	@media (max-width: $break-small) {
-	}
-}
-
 // ------------------------------------------------ //
 //					  Code Blocks 					//
 // -------------------------------------------------//
@@ -310,18 +297,18 @@ section {
 // an optional filename field that goes before a pre
 .filename {
 	display: block;
-	background: var(--border);
-	border-top-right-radius: 4px;
-	border-top-left-radius: 4px;
+	background: var(--border-weak);
+	border-top-right-radius: 3px;
+	border-top-left-radius: 3px;
 	position: relative;
 	bottom: -40px;
 
 	div {
 		padding: 1em;
 		font-size: 0.8rem;
-		font-family: "Lucida Console", Monaco, monospace;
-		color: var(--contrast-med);
-		background: var(--background-med);
+		font-family: $font-code;
+		color: var(--contrast-weak);
+		background: var(--background-weak);
 		display: inline-block;
 		border-top-left-radius: 4px;
 		padding-top: 16px;
@@ -341,17 +328,17 @@ code {
 	white-space: pre;
 	white-space: pre-wrap;
 	background: var(--background);
-	border-radius: 4px;
+	border-radius: 3px;
 	padding: 2px 6px;
 }
 
 pre {
-	border: solid 1px var(--border);
+	border: solid 1px var(--border-weak);
 	padding: 1em;
 	display: block;
 	margin: 36px 0;
-	border-radius: 4px;
-	font-size: 0.85rem;
+	border-radius: 3px;
+	font-size: 0.85em;
 	line-height: 1.4;
 	white-space: pre;
 	white-space: pre-wrap;
@@ -359,7 +346,7 @@ pre {
 	word-wrap: break-word;
 	position: relative;
 	z-index: -100;
-	background-color: var(--background-med) !important;
+	background-color: var(--background-weak) !important;
 
 	@media (max-width: $break-small) {
 		border-radius: 0;
@@ -385,7 +372,8 @@ article {
 	blockquote {
 		box-sizing: border-box;
 		padding-left: 1em;
-		border-left: 4px solid var(--accent);
+		border-left: 0.15em solid var(--accent);
+		font-style: italic;
 	}
 }
 
@@ -424,10 +412,10 @@ a.header-link {
 .container img {
 	display: block;
 	opacity: 0;
-	border-radius: 4px;
+	border-radius: 3px;
 	-webkit-animation: 0.5s ease 0s normal forwards 1 fadein;
 	animation: 0.5s ease 0s normal forwards 1 fadein;
-	margin: 36px 0;
+	margin: 3em 0;
 }
 
 img.loaded {
@@ -438,7 +426,7 @@ img.loaded {
 .video-container {
 	position: relative;
 	padding-bottom: 56.25%;
-	padding-top: 30px;
+	padding-top: 3em;
 	height: 0;
 	overflow: hidden;
 }
@@ -460,7 +448,7 @@ img.loaded {
 .theme-switcher {
 	background: none;
 	color: var(--contrast);
-	border: 1px solid var(--contrast-med);
+	border: 1px solid var(--contrast-weak);
 	padding: 0.5em 0.8em;
 	border-radius: 3px;
 	cursor: pointer;
@@ -482,7 +470,7 @@ img.loaded {
 // Main container
 footer {
 	padding: 2em 1em;
-	background: var(--background-med);
+	background: var(--background-weak);
 	text-align: center;
 	display: block;
 }
@@ -521,4 +509,35 @@ sup.footnote-reference {
 	&.padded {
 		padding: 1em;
 	}
+	&.gap-small {
+		gap: 0.5em;
+	}
+	&.gap {
+		gap: 1em;
+	}
+}
+
+.chip {
+	font-size: 0.8em;
+	border-radius: 999px;
+	border: var(--border) 1px solid;
+	background: var(--background-weak);
+	padding: 0.5em 1em;
+	align-items: center;
+	justify-content: center;
+	display: inline-flex;
+	text-transform: capitalize;
+	color: var(--contrast);
+	font-family: $font-title;
+	font-weight: normal;
+	text-decoration: none;
+	&:hover {
+		background-color: var(--background-hover);
+	}
+}
+
+nav {
+	position: sticky;
+	top: 0;
+	background-color: var(--background);
 }

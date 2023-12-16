@@ -16,3 +16,11 @@
 </div>
 {% endif %}
 {% endmacro chapter %}
+
+{% macro tags(taxonomy, base="tags") %}
+<div class='flex gap-small'>
+    {% for tag in taxonomy %}
+    <a href="/{{base}}/{{tag}}"><span class="chip">{{ tag }}</span></a>
+    {% endfor %}
+</div>
+{% endmacro tags %}

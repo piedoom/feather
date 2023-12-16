@@ -1,11 +1,13 @@
 body {
     --contrast: #2b303b;
-    --contrast-med: #777777;
+    --contrast-weak: #777777;
 
     --background: #ffffff;
-    --background-med: #f4f5f7;
+    --background-weak: #f4f5f7;
+    --background-hover: #ebebeb;
 
-    --border: #eceff3;
+    --border: rgba(33, 38, 51, 0.322);
+    --border-weak: #eceff3;
 
     --accent: #ed1249;
     --accent-trans: #ed124957;
@@ -13,12 +15,14 @@ body {
 
 @mixin dark() {
     --contrast: #f7f9fc;
-    --contrast-med: #e3e3e9;
+    --contrast-weak: #e3e3e9;
 
     --background: #111622;
-    --background-med: #191e2c;
+    --background-weak: #1f293f;
+    --background-hover: #2e3b58;
 
-    --border: #212633;
+    --border: rgba(255, 255, 255, 0.2);
+    --border-weak: #212633;
 
     --accent: #ff6d91;
     --accent-trans: #ff6d9167;

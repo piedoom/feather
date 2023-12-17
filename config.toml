@@ -7,6 +7,7 @@ base_url = "http://localhost:1111"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
+taxonomies = [{ name = "tags", feed = true }]
 
 [markdown]
 highlight_code = true
@@ -16,9 +17,6 @@ highlight_themes_css = [
   { theme = "ayu-light", filename = "syntax-theme-light.css" },
 ]
 
-generate_categories_pages = true
-generate_tags_pages = true
-
 [extra]
-feather_disqus_code = "<div id='disqus_thread'><div style='background: lightgrey; text-align: center; color: grey; padding: 100px 24px;'>Comments mockup</div></div>"
 feather_analytics = "<script></script>"
+# feather_disqus_domain = "mysite-com"

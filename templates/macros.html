@@ -18,9 +18,11 @@
 {% endmacro chapter %}
 
 {% macro tags(taxonomy, base="tags") %}
+{% set taxonomy_properties = get_taxonomy(kind="tags") %}
 <div class='flex gap-small'>
     {% for tag in taxonomy %}
-    <a href="/{{base}}/{{tag}}"><span class="chip">{{ tag }}</span></a>
+    {% set url = get_taxonomy_url(kind="tags", name=tag) %}
+    <a href="{{url}}"><span class="chip">{{ tag }}</span></a>
     {% endfor %}
 </div>
 {% endmacro tags %}

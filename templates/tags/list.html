@@ -7,9 +7,10 @@
   </section>
   <div class="posts">
     {% set tags = get_taxonomy(kind="tags") %}
-    {% for tag in tags.items %}
-    <a class='header-link' href="{{ tag.path }}">
-      <h5 class="title"> {{ tag.name }} </h5>
+    {% for page in tags.items %}
+    {% set url = get_taxonomy_url(kind="tags", name=page.name) %}
+    <a class='header-link' href="{{ url }}">
+      <h5 class="title"> {{ page.name }} </h5>
     </a>
     <hr />
     {% endfor %}

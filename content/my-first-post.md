@@ -1,7 +1,8 @@
 +++
 title = "My first post"
 date = 2018-01-07
-category = "test"
+[taxonomies]
+tags = ["other", "the game"]
 +++
 
 # Hey all

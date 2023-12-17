@@ -44,7 +44,7 @@
       <div class="flex padded">
         <div class="flex fill vcenter">
           <a href="/">
-            <h4>{{ config.title }}</h4>
+            <h4>{% if config.title %}{{ config.title }}{% else %}Home{% endif %}</h4>
           </a>
         </div>
         <button class="theme-switcher">theme</button>

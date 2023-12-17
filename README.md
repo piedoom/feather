@@ -2,8 +2,9 @@
 A lightweight blog theme for [Zola](https://www.getzola.org/) (and to my knowledge the first of now
 many themes created specifically for Zola).
 
-# Live demo
-https://u9h.github.io/feather/
+# [Live demo 🔗](https://feather.doomy.org/)
+
+[![screenshot](screenshot.png)](https://feather.doomy.org/)
 
 # Developing & Contributing
 Because feather comes with example content, you can run the theme just like any Zola

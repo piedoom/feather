@@ -3,7 +3,7 @@
 # for easier development.
 
 # The URL the site will be built for
-base_url = "http://localhost:1111"
+base_url = "https://feather.doomy.org/"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true

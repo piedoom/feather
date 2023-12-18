@@ -1,0 +1,32 @@
+<div class="social">
+    {% set data = load_data(url=url ~ ".json", format="json") %}
+    {% set author = load_data(url=data.attributedTo ~ ".json", format="json") %}
+    {% set components = author.id | split(pat="/users/") %}
+
+    <a href={{author.url}} class="author" target="_blank">
+        <span><img class="avatar" src={{author.icon.url}} /></span>
+        <div class="flex column gap-xsmall">
+            <h6>{{ author.name }}</h6>
+            <p class="secondary small">@{{components[1]}}@{{components[0] | trim_start_matches(pat="http://") |
+                trim_start_matches(pat="https://")
+                }}</p>
+        </div>
+    </a>
+
+    {# Show post body #}
+    {{ data.content | safe }}
+
+    {# Show any attachments #}
+    {% if data.attachment %}
+    {% for attachment in data.attachment %}
+    {% if attachment.mediaType is containing("video") %}
+    <video src={{attachment.url}} controls="true"></video>
+    {% endif %}
+    {% endfor %}
+
+    <a href={{data.url}} class="secondary small">{{ data.published | date(format=" %B %e, %Y at %l:%S %p",
+        timezone=config.extra.feather_timezone | default(value="America/New_York"))
+        }}
+    </a>
+    {% endif %}
+</div>

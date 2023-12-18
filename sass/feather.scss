@@ -57,17 +57,6 @@ h6 {
 	color: var(--contrast);
 }
 
-p {
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		margin-bottom: 1em;
-	}
-}
-
 h1 {
 	font-size: 3em;
 }
@@ -110,10 +99,6 @@ hr {
 	}
 }
 
-p hr {
-	margin-bottom: 2em;
-}
-
 // paragraphs and lists
 p,
 ul,
@@ -123,7 +108,6 @@ ol {
 	line-height: 1.5;
 	font-size: 1em;
 	text-align: start;
-	margin-bottom: 1em;
 }
 
 ul,
@@ -147,7 +131,6 @@ strong {
 
 // Links and Selections
 a {
-	font-weight: bold;
 	color: var(--accent);
 	text-decoration: none;
 }
@@ -246,7 +229,7 @@ section {
 		h5,
 		h6 {
 			margin-top: 2rem;
-			margin-bottom: 1rem;
+			margin-bottom: 0.5rem;
 		}
 		h1 {
 			font-size: 2em;
@@ -374,6 +357,8 @@ article {
 		padding-left: 1em;
 		border-left: 0.15em solid var(--accent);
 		font-style: italic;
+		margin-top: 1em;
+		margin-bottom: 1em;
 	}
 }
 
@@ -497,6 +482,9 @@ sup.footnote-reference {
 //////
 .flex {
 	display: flex;
+	&.column {
+		flex-direction: column;
+	}
 	&.fill {
 		flex: 1;
 	}
@@ -509,12 +497,19 @@ sup.footnote-reference {
 	&.padded {
 		padding: 1em;
 	}
+	&.gap-xsmall {
+		gap: 0.2em;
+	}
 	&.gap-small {
 		gap: 0.5em;
 	}
 	&.gap {
 		gap: 1em;
 	}
+}
+
+.secondary {
+	color: var(--contrast-weak);
 }
 
 .chip {
@@ -541,4 +536,48 @@ nav {
 	top: 0;
 	background-color: var(--background);
 	z-index: 100000;
+}
+
+article {
+	video {
+		width: 100%;
+	}
+	img {
+		width: 100%;
+		max-height: 30em;
+		object-fit: contain;
+		overflow: hidden;
+	}
+}
+
+.social {
+	border-radius: 3px;
+	margin-top: 2em;
+	margin-bottom: 2em;
+	display: flex;
+	flex-direction: column;
+	padding: 1em;
+	gap: 1em;
+	background-color: var(--background-weak);
+	border: var(--border) solid 1px;
+	font-family: $font-title;
+	* {
+		font-family: $font-title;
+	}
+	.author {
+		display: flex;
+		gap: 0.5em;
+		align-items: center;
+		h6 {
+			margin: 0;
+		}
+	}
+	.avatar {
+		width: 2.5em;
+		margin: 0;
+	}
+}
+
+.small {
+	font-size: 0.8em;
 }

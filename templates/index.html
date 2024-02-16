@@ -101,7 +101,7 @@
                 // Select the button
                 const theme = (function () {
                     const stored = localStorage.getItem("theme");
-                    if (localStorage == null) {
+                    if (stored == "null") {
                         if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
                             return "dark";
                         } else {

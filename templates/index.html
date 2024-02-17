@@ -15,8 +15,17 @@
     <!-- css -->
     <link rel="stylesheet" href="/reset.css">
     <link rel="stylesheet" href="/feather.css">
+    {# If theme switching is not disabled #}
+    {% if not config.extra.feather_theme %}
     <link rel="stylesheet" href="/syntax-theme-light.css" media="screen" />
     <link rel="stylesheet" href="/syntax-theme-dark.css" media="screen and (prefers-color-scheme: dark)" />
+    {# If a specific theme is requested, theme switching will disable... #}
+    {% elif config.extra.feather_theme == "light" %}
+    <link rel="stylesheet" href="/syntax-theme-light.css" media="screen" />
+    {% elif config.extra.feather_theme == "dark" %}
+    <link rel="stylesheet" href="/syntax-theme-dark.css" media="screen" />
+    {% endif %}
+
     <link rel="stylesheet" id="syntax" />
 
     {% if config.extra.feather_head %}
@@ -32,7 +41,8 @@
     {% endblock extra_head %}
 </head>
 
-<body>
+<body {% if not config.extra.feather_theme %}{% elif config.extra.feather_theme=="dark" %} class="dark" {% else %}
+    class="light" {% endif %}>
     <div class="root">
 
         <nav>
@@ -42,10 +52,14 @@
                         <h4>{% if config.title %}{{ config.title }}{% else %}Home{% endif %}</h4>
                     </a>
                 </div>
+                {% if not config.extra.feather_theme %}
                 <button class="theme-switcher">theme</button>
+                {% endif %}
             </div>
+            {% if not config.extra.feather_hide_nav_image %}
             <div class='header-image' style='background-image: url(/theme_images/default.gif);'>
             </div>
+            {% endif %}
         </nav>
 
 
@@ -83,6 +97,7 @@
             {% endblock footer %}
         </footer>
 
+        {% if not config.extra.feather_theme %}
         <script>
             function change_theme(theme) {
                 if (theme == "light") {
@@ -125,6 +140,7 @@
 
             });
         </script>
+        {% endif %}
     </div>
 </body>
 

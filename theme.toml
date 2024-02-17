@@ -6,8 +6,10 @@ min_version = "0.11.0"
 demo = "http://feather.doomy.org/"
 
 [extra]
+# feather_theme = "light"
 feather_disqus_domain = ""
 feather_head = ""
+feather_hide_nav_image = false
 
 [author]
 name = "doomy"

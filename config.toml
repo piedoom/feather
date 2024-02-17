@@ -18,5 +18,7 @@ highlight_themes_css = [
 ]
 
 [extra]
-feather_head = "<script></script>"
+# feather_theme = "dark"
+feather_head = ""
+feather_hide_nav_image = false
 # feather_disqus_domain = "mysite-com"

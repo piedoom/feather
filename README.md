@@ -6,6 +6,12 @@ many themes created specifically for Zola).
 
 [![screenshot](screenshot.png)](https://feather.doomy.org/)
 
+## Features
+
+- Fully responsive
+- Designed for legibility
+- All JS is non-critical and fails gracefully
+
 ## Options
 Zola allows themes to [define `[extra]` variables](https://www.getzola.org/documentation/getting-started/configuration/)
 in the config. Here's a full list of theme variables with example values and comments.

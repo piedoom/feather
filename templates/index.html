@@ -13,6 +13,13 @@
     <title>{% block title %}{{ config.title }}{% endblock title %}</title>
 
     <!-- css -->
+    <noscript>
+        <style>
+            .theme-switcher {
+                display: none;
+            }
+        </style>
+    </noscript>
     <link rel="stylesheet" href="/reset.css">
     <link rel="stylesheet" href="/feather.css">
     {# If theme switching is not disabled #}

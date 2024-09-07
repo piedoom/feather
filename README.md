@@ -11,7 +11,7 @@ Because feather comes with example content, you can run the theme just like any 
 blog with `zola serve`.
 
 # Usage
-Using feather is easy.  Install [Zola](https://www.getzola.org/) and follow 
+Using feather is easy.  Install [Zola](https://www.getzola.org/) and follow
 [the guide for creating a site and using a theme](https://www.getzola.org/documentation/themes/installing-and-using-themes/).  Then,
 add `theme = "feather"` to your `config.toml` file.
 
@@ -30,4 +30,5 @@ title = "My site" # Otherwise, this will read "Home" in the nav
 [extra]
 feather_analytics = "<script></script>" # basically just a place to put extra scripts
 feather_disqus_domain = "mysite-com" # disqus embeds, if you want that
+feather_cusdis_id = "aaaaa123-1234-1234-1234-aaaaaaaa123" # cusdis managed embed https://cusdis.com/
 ```

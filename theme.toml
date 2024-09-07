@@ -7,7 +7,9 @@ demo = "http://feather.doomy.org/"
 
 [extra]
 feather_disqus_domain = ""
+feather_cusdis_id = ""
 feather_analytics = ""
+
 
 [author]
 name = "doomy"

@@ -170,7 +170,7 @@ body {
     background: var(--background);
     min-height: 100vh;
 
-    >.root {
+    > .root {
         display: flex;
         flex-direction: column;
         min-height: 100vh;
@@ -221,7 +221,8 @@ section {
     span,
     ul,
     ol {
-        @media (max-width: $break-small) {}
+        @media (max-width: $break-small) {
+        }
     }
 
     // exclude the padding from spans in code
@@ -230,7 +231,6 @@ section {
     }
 
     article {
-
         // reduce header size for items within
         // an article (e.g. a blog post)
         h1,
@@ -257,12 +257,15 @@ section {
         h6 {
             font-size: 1em;
         }
+
+        p {
+            margin: 1em 0;
+        }
     }
 }
 
 .info {
     span {
-
         // padding: 0px;
         a {
             text-decoration: none;
@@ -280,7 +283,8 @@ section {
         content: "•";
     }
 
-    @media (max-width: $break-small) {}
+    @media (max-width: $break-small) {
+    }
 }
 
 .chapter {
@@ -503,8 +507,13 @@ sup.footnote-reference {
 }
 
 .footnote-definition {
+    display: flex;
+    align-items: center;
     .footnote-definition-label {
         font-size: 1.2rem;
+        text-align: right;
+        /* width: 2em; */
+        margin-right: 1em;
         font-weight: bold;
     }
 

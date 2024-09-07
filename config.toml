@@ -13,10 +13,12 @@ taxonomies = [{ name = "tags", feed = true }]
 highlight_code = true
 highlight_theme = "css"
 highlight_themes_css = [
-  { theme = "ayu-dark", filename = "syntax-theme-dark.css" },
-  { theme = "ayu-light", filename = "syntax-theme-light.css" },
+    { theme = "ayu-dark", filename = "syntax-theme-dark.css" },
+    { theme = "ayu-light", filename = "syntax-theme-light.css" },
 ]
 
 [extra]
-feather_analytics = "<script></script>"
+# feather_theme = "dark"
+feather_head = ""
+feather_hide_nav_image = false
 # feather_disqus_domain = "mysite-com"

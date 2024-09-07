@@ -41,21 +41,20 @@
 	<noscript>Please enable JavaScript to view the <a href='https://disqus.com/?ref_noscript'>comments powered by
 			Disqus.</a></noscript>
 	{% endif %}
+	<div id="cusdis">
+		{% if config.extra.feather_cusdis_id %}
+				<div id="cusdis_thread"
+				style="background: none !important;"
+				data-host="https://cusdis.com"
+				data-app-id="{{config.extra.feather_cusdis_id}}"
+				data-page-id="{{page.permalink}}"
+				data-page-url="{{page.slug}}"
+				data-page-title="{{page.title}}"
+				data-theme="auto"
+				></div>
+				<script async defer src="/js/cusdis.es.js"></script>
+		{% endif %}
+	</div>
 </div>
-<div id="cusdis">
-    <div class="container">
-    {% if config.extra.feather_cusdis_id %}
-            <div id="cusdis_thread"
-            style="background: none !important;"
-            data-host="https://cusdis.com"
-            data-app-id="{{config.extra.feather_cusdis_id}}"
-            data-page-id="{{page.permalink}}"
-            data-page-url="{{page.slug}}"
-            data-page-title="{{page.title}}"
-            data-theme="auto"
-            ></div>
-            <script async defer src="/js/cusdis.es.js"></script>
-    {% endif %}
-    </div>
-</div>
+
 {% endblock content %}

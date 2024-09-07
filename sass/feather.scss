@@ -27,14 +27,17 @@ $font-code: "Lucida Console", Monaco, monospace;
     0% {
         opacity: 0;
     }
+
     100% {
         opacity: 1;
     }
 }
+
 @-webkit-keyframes fadein {
     0% {
         opacity: 0;
     }
+
     100% {
         opacity: 1;
     }
@@ -93,7 +96,6 @@ hr {
     background: var(--border-weak);
     height: 1px;
     border: none;
-    margin: 1em 0;
 
     @media (max-width: $break-small) {
         width: calc(100% - 2em);
@@ -116,6 +118,7 @@ ol {
     p {
         padding: 0 0 !important;
     }
+
     @media (max-width: $break-small) {
         list-style-position: inside;
     }
@@ -138,7 +141,8 @@ a {
 
 ::selection,
 ::-moz-selection {
-    background: var(--accent-trans); /* WebKit/Blink Browsers */
+    background: var(--accent-trans);
+    /* WebKit/Blink Browsers */
 }
 
 // Code
@@ -165,11 +169,13 @@ body {
     color: var(--contrast);
     background: var(--background);
     min-height: 100vh;
-    > .root {
+
+    >.root {
         display: flex;
         flex-direction: column;
         min-height: 100vh;
     }
+
     .container {
         flex: 1;
     }
@@ -180,11 +186,13 @@ body {
     flex-direction: column;
     gap: 1em;
     margin: 2em 0;
+
     .post {
         flex-direction: column;
         display: flex;
         gap: 0.5em;
     }
+
     p {
         margin: 0;
     }
@@ -197,9 +205,11 @@ section {
 .container {
     box-sizing: border-box;
     padding: 0 1em;
+    min-height: 100vh;
     max-width: 800px;
     width: 100%;
     margin: 0 auto;
+
     // margin for text elements but not media
     p,
     h1,
@@ -211,8 +221,7 @@ section {
     span,
     ul,
     ol {
-        @media (max-width: $break-small) {
-        }
+        @media (max-width: $break-small) {}
     }
 
     // exclude the padding from spans in code
@@ -221,6 +230,7 @@ section {
     }
 
     article {
+
         // reduce header size for items within
         // an article (e.g. a blog post)
         h1,
@@ -232,42 +242,45 @@ section {
             margin-top: 2rem;
             margin-bottom: 0.5rem;
         }
+
         h1 {
             font-size: 2em;
         }
+
         h2 {
             font-size: 1.5em;
         }
+
         h3,
         h4,
         h5,
         h6 {
             font-size: 1em;
         }
-        > p {
-            margin: 1em 0;
-        }
     }
 }
 
 .info {
     span {
+
         // padding: 0px;
         a {
             text-decoration: none;
             color: inherit;
             font-weight: inherit;
+
             &:hover {
                 text-decoration: underline !important;
             }
         }
     }
+
     .divider:before {
         padding: 0 8px;
         content: "•";
     }
-    @media (max-width: $break-small) {
-    }
+
+    @media (max-width: $break-small) {}
 }
 
 .chapter {
@@ -304,6 +317,7 @@ section {
 
     @media (max-width: $break-small) {
         border-radius: 0;
+
         div {
             border-radius: 0;
         }
@@ -346,6 +360,7 @@ pre {
         background-color: transparent;
     }
 }
+
 article {
     > pre,
     > .filename {
@@ -386,6 +401,7 @@ article {
     0% {
         background-position: 0 0;
     }
+
     100% {
         background-position: 0 -100%;
     }
@@ -441,6 +457,7 @@ img.loaded {
     padding: 0.5em 0.8em;
     border-radius: 3px;
     cursor: pointer;
+
     &::before {
         content: "dark ";
     }
@@ -456,18 +473,30 @@ img.loaded {
 //			     		Footer						//
 // -------------------------------------------------//
 
-// Main container
 footer {
-    padding: 2em 1em;
+    padding: 1em 1em;
     background: var(--background-weak);
-    text-align: center;
-    display: block;
+
+    p {
+        text-align: center;
+        display: block;
+        font-size: 0.7em;
+        color: var(--contrast-weak);
+        font-family: $font-title;
+        opacity: 0.5;
+
+        a {
+            color: inherit;
+            text-decoration: underline;
+        }
+    }
 }
 
 sup.footnote-reference {
     &::before {
         content: "[";
     }
+
     &::after {
         content: "]";
     }
@@ -478,6 +507,7 @@ sup.footnote-reference {
         font-size: 1.2rem;
         font-weight: bold;
     }
+
     p {
         font-size: 0.8rem;
     }
@@ -486,27 +516,35 @@ sup.footnote-reference {
 //////
 .flex {
     display: flex;
+
     &.column {
         flex-direction: column;
     }
+
     &.fill {
         flex: 1;
     }
+
     &.vcenter {
         align-items: center;
     }
+
     &.hcenter {
         justify-items: center;
     }
+
     &.padded {
         padding: 1em;
     }
+
     &.gap-xsmall {
         gap: 0.2em;
     }
+
     &.gap-small {
         gap: 0.5em;
     }
+
     &.gap {
         gap: 1em;
     }
@@ -530,6 +568,7 @@ sup.footnote-reference {
     font-family: $font-title;
     font-weight: normal;
     text-decoration: none;
+
     &:hover {
         background-color: var(--background-hover);
     }
@@ -546,6 +585,7 @@ article {
     video {
         width: 100%;
     }
+
     img {
         width: 100%;
         max-height: 30em;
@@ -565,17 +605,21 @@ article {
     background-color: var(--background-weak);
     border: var(--border) solid 1px;
     font-family: $font-title;
+
     * {
         font-family: $font-title;
     }
+
     .author {
         display: flex;
         gap: 0.5em;
         align-items: center;
+
         h6 {
             margin: 0;
         }
     }
+
     .avatar {
         width: 2.5em;
         margin: 0;
@@ -588,5 +632,4 @@ article {
 
 #cusdis {
     padding: 2em 0;
-    background-color: var(--background);
 }

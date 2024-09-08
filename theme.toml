@@ -11,7 +11,7 @@ feather_disqus_domain = ""
 feather_head = ""
 feather_hide_nav_image = false
 feather_cusdis_id = ""
-
+# feather_social = { url = "https://mastodon.social/@doomy", display = "@doomy@mastodon.social" }
 
 [author]
 name = "doomy"

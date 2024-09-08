@@ -7,8 +7,12 @@
 			<h2>{{ page.title }}</h2>
 			<div class="info">
 				<span>{{ page.date | date(format="%Y %b %d") }}</span>
-				<span class='divider' />
-				<span>{{ page.reading_time }} minute read</span>
+				
+				{% if config.extra.feather_social %}
+                    <span class='divider' />
+                    <a href="{{config.extra.feather_social.url}}" target="_blank">{{ config.extra.feather_social.display }}</a>
+				{% endif %}
+
 				{% if page.category %}
 				<span class='divider' />
 				<!-- link to page category if user is building categories -->

@@ -7,18 +7,6 @@ demo = "http://feather.doomy.org/"
 
 [extra]
 
-[extra.feather]
-# theme = "light"
-# hide_nav_image = false
-# opengraph = { image = "" }
-# disqus_id = ""
-# cusdis_id = ""
-# social =  { url = "https://mastodon.social/@doomy", display = "@doomy@mastodon.social" }
-timezone = "America/New_York"
-
-# [extra.feather.analytics]
-# goatcounter_id = "doomy-org"
-
 [author]
 name = "doomy"
 homepage = "https://doomy.org"

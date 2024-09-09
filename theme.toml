@@ -2,7 +2,7 @@ name = "feather"
 description = "A fuzzy blog theme"
 license = "MIT"
 homepage = "https://github.com/piedoom/feather"
-min_version = "0.11.0"
+min_version = "0.19.0"
 demo = "http://feather.doomy.org/"
 
 [extra]

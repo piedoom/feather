@@ -1,7 +1,12 @@
-{% extends "index.html" %}
+{% extends "_base.html" %}
+
+{% block feeds %}
+{% if config.generate_feeds %}
+<link rel="alternate" type="application/atom+xml" href="{{ term.permalink ~ "atom.xml" }}">
+{% endif %}
+{% endblock feeds %}
 
 {% block content %}
-
 
 <div class="container">
   <section>

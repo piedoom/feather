@@ -4,10 +4,12 @@
 
 # The URL the site will be built for
 base_url = "https://feather.doomy.org/"
+title = "feather theme"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 taxonomies = [{ name = "tags", feed = true }]
+generate_feeds = true
 
 [markdown]
 highlight_code = true

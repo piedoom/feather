@@ -16,6 +16,9 @@ demo = "http://feather.doomy.org/"
 # social =  { url = "https://mastodon.social/@doomy", display = "@doomy@mastodon.social" }
 timezone = "America/New_York"
 
+# [extra.feather.analytics]
+# goatcounter_id = "doomy-org"
+
 [author]
 name = "doomy"
 homepage = "https://doomy.org"

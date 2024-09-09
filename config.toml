@@ -23,10 +23,12 @@ highlight_themes_css = [
 
 [extra.feather]
 # theme = "light"
-# head = "<script></script>"
 # hide_nav_image = false
+# opengraph = { image = "" }
 # disqus_id = ""
 # cusdis_id = ""
 # social =  { url = "https://mastodon.social/@doomy", display = "@doomy@mastodon.social" }
-# opengraph = { image = "" }
 # timezone = "America/New_York"
+
+# [extra.feather.analytics]
+# goatcounter_id = "doomy-org"

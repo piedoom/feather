@@ -42,6 +42,10 @@
 
     <link rel="stylesheet" id="syntax" />
 
+    {% if config.extra.feather.analytics.goatcounter_id %}
+    <script data-goatcounter={{"https://" ~ config.extra.feather.analytics.goatcounter_id ~ ".goatcounter.com/count"}} async src="//gc.zgo.at/count.js"></script>
+    {% endif %}
+
     {% if config.extra.feather.head %}
     {{ config.extra.feather.head | safe }}
     {% endif %}

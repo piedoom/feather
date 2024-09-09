@@ -21,13 +21,18 @@ in the config. Here's a full list of theme variables with example values and com
 title = "My site" # Otherwise, this will read "Home" in the nav
 
 [extra.feather]
-theme = "light" # Specify a specific theme to use, or use system prefs
+# Specify a specific theme to use, or use system prefs
+# If set, the theme switcher button is hidden
+theme = "light"
 head = "<script></script>" # add anything to the head
 hide_nav_image = false # hide the navigation image
 disqus_id = "my-site-com" # site domain if you want disqus comments
 cusdis_id = "12312-31231123-123123123" # cusdis id if you use their comment service
 social =  { url = "https://mastodon.social/@doomy", display = "@doomy@mastodon.social" } # generic social to show on pages
 timezone = "America/New_York" # timezone to calculate article post times
+
+[extra.feather.analytics]
+goatcounter_id = "mydomain-com" # privacy-focused analytics https://www.goatcounter.com
 ```
 
 Per post, these options are available:

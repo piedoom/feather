@@ -6,12 +6,15 @@ min_version = "0.11.0"
 demo = "http://feather.doomy.org/"
 
 [extra]
-# feather_theme = "light"
-feather_disqus_domain = ""
-feather_head = ""
-feather_hide_nav_image = false
-feather_cusdis_id = ""
-# feather_social = { url = "https://mastodon.social/@doomy", display = "@doomy@mastodon.social" }
+
+[extra.feather]
+# theme = "light"
+# hide_nav_image = false
+# opengraph = { image = "" }
+# disqus_id = ""
+# cusdis_id = ""
+# social =  { url = "https://mastodon.social/@doomy", display = "@doomy@mastodon.social" }
+timezone = "America/New_York"
 
 [author]
 name = "doomy"

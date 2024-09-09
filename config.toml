@@ -18,8 +18,13 @@ highlight_themes_css = [
 ]
 
 [extra]
-# feather_theme = "dark"
-feather_head = ""
-feather_hide_nav_image = false
-# feather_social = { url = "https://mastodon.social/@doomy", display = "@doomy@mastodon.social" }
-# feather_disqus_domain = "mysite-com"
+
+[extra.feather]
+# theme = "light"
+# head = "<script></script>"
+# hide_nav_image = false
+# disqus_id = ""
+# cusdis_id = ""
+# social =  { url = "https://mastodon.social/@doomy", display = "@doomy@mastodon.social" }
+# opengraph = { image = "" }
+# timezone = "America/New_York"

@@ -10,6 +10,9 @@
     <!-- Enable responsiveness on mobile devices-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
+    {% block opengraph %}
+    {% endblock opengraph %}
+
     <title>{% block title %}{{ config.title }}{% endblock title %}</title>
 
     <!-- css -->
@@ -23,20 +26,20 @@
     <link rel="stylesheet" href="/reset.css">
     <link rel="stylesheet" href="/feather.css">
     {# If theme switching is not disabled #}
-    {% if not config.extra.feather_theme %}
+    {% if not config.extra.feather.theme %}
     <link rel="stylesheet" href="/syntax-theme-light.css" media="screen" />
     <link rel="stylesheet" href="/syntax-theme-dark.css" media="screen and (prefers-color-scheme: dark)" />
     {# If a specific theme is requested, theme switching will disable... #}
-    {% elif config.extra.feather_theme == "light" %}
+    {% elif config.extra.feather.theme == "light" %}
     <link rel="stylesheet" href="/syntax-theme-light.css" media="screen" />
-    {% elif config.extra.feather_theme == "dark" %}
+    {% elif config.extra.feather.theme == "dark" %}
     <link rel="stylesheet" href="/syntax-theme-dark.css" media="screen" />
     {% endif %}
 
     <link rel="stylesheet" id="syntax" />
 
-    {% if config.extra.feather_head %}
-    {{ config.extra.feather_head | safe }}
+    {% if config.extra.feather.head %}
+    {{ config.extra.feather.head | safe }}
     {% endif %}
 
     {% if config.generate_rss %}
@@ -48,7 +51,7 @@
     {% endblock extra_head %}
 </head>
 
-<body {% if not config.extra.feather_theme %}{% elif config.extra.feather_theme=="dark" %} class="dark" {% else %}
+<body {% if not config.extra.feather.theme %}{% elif config.extra.feather.theme=="dark" %} class="dark" {% else %}
     class="light" {% endif %}>
     <div class="root">
 
@@ -59,11 +62,11 @@
                         <h4>{% if config.title %}{{ config.title }}{% else %}Home{% endif %}</h4>
                     </a>
                 </div>
-                {% if not config.extra.feather_theme %}
+                {% if not config.extra.feather.theme %}
                 <button class="theme-switcher">theme</button>
                 {% endif %}
             </div>
-            {% if not config.extra.feather_hide_nav_image %}
+            {% if not config.extra.feather.hide_nav_image %}
             <div class='header-image' style='background-image: url(/theme_images/default.gif);'>
             </div>
             {% endif %}
@@ -104,7 +107,7 @@
             {% endblock footer %}
         </footer>
 
-        {% if not config.extra.feather_theme %}
+        {% if not config.extra.feather.theme %}
         <script>
             function change_theme(theme) {
                 if (theme == "light") {

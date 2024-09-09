@@ -20,31 +20,21 @@ in the config. Here's a full list of theme variables with example values and com
 # Regular variables you might want to set...
 title = "My site" # Otherwise, this will read "Home" in the nav
 
-[extra]
-# Specify a theme
-# Default: unset
-#
-# by default, feather enables light and dark mode
-# (and switching when javascript is enabled.)
-# However, if you prefer to only allow one mode,
-# set this to "dark" or "light".
-feather_theme = "dark"
+[extra.feather]
+theme = "light" # Specify a specific theme to use, or use system prefs
+head = "<script></script>" # add anything to the head
+hide_nav_image = false # hide the navigation image
+disqus_id = "my-site-com" # site domain if you want disqus comments
+cusdis_id = "12312-31231123-123123123" # cusdis id if you use their comment service
+social =  { url = "https://mastodon.social/@doomy", display = "@doomy@mastodon.social" } # generic social to show on pages
+timezone = "America/New_York" # timezone to calculate article post times
+```
 
-# Quickly insert into `<head>`
-# Default: unset
-feather_head = "<script>alert()</script>"
+Per post, these options are available:
 
-# Add Disqus comments
-# Default: unset
-#
-# Adds comments to pages by providing your
-# disqus domain. Comments will not appear on
-# index pages, etc.
-feather_disqus_domain = "mysite-com"
-
-# Hide the nav bottom border/background image
-# Default: false
-feather_hide_nav_image = true
+```toml
+[extra.feather.opengraph]
+image = "my_image.jpg" # Assumes asset colocation
 ```
 
 # Usage

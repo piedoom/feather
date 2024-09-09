@@ -25,7 +25,7 @@
     {% endfor %}
 
     <a href={{data.url}} class="secondary small">{{ data.published | date(format=" %B %e, %Y at %l:%S %p",
-        timezone=config.extra.feather_timezone | default(value="America/New_York"))
+        timezone=config.extra.feather.timezone | default(value="America/New_York"))
         }}
     </a>
     {% endif %}

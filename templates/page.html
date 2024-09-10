@@ -3,6 +3,10 @@
 
 {% block description %}{{page.description}}{% endblock description %}
 
+{% block head %}
+<script src="/js/footnote.js"></script>
+{% endblock head %}
+
 {% block opengraph %}
 <meta property="og:title" content="{{page.title}}">
 <meta property="og:description" content="{{page.description}}">

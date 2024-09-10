@@ -105,7 +105,8 @@ hr {
 // paragraphs and lists
 p,
 ul,
-ol {
+ol,
+#definition_popup {
     font-family: $font-body;
     font-weight: 300;
     line-height: 1.5;
@@ -648,4 +649,14 @@ article {
 
 #cusdis {
     padding: 2em 0;
+}
+
+#definition_popup {
+    font-size: 1em;
+    background-color: var(--background);
+    color: var(--contrast);
+    border: var(--border) 1px solid;
+    padding: 1em;
+    border-radius: 5px;
+    max-width: 24em;
 }

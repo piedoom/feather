@@ -1,6 +1,8 @@
 {% extends "_base.html" %}
 {% import "macros.html" as m %}
 
+{% block description %}{{page.description}}{% endblock description %}
+
 {% block opengraph %}
 <meta property="og:title" content="{{page.title}}">
 <meta property="og:description" content="{{page.description}}">

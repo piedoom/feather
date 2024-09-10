@@ -10,8 +10,8 @@
     <!-- Enable responsiveness on mobile devices-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-
     <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+    <meta name="description" content="{% block description %}{% if config.description %}{{ config.description }}{% endif %}{% endblock description %}">
 
     {% block feeds %}
     {% endblock feeds %}

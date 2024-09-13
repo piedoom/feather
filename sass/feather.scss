@@ -123,6 +123,9 @@ ol {
     @media (max-width: $break-small) {
         list-style-position: inside;
     }
+    li>ul, li>ol {
+        margin-left: 1em !important;
+    }
 }
 
 // text styles

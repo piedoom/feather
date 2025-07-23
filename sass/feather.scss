@@ -105,7 +105,7 @@ hr {
 // paragraphs and lists
 p,
 ul,
-ol,
+ol
 #definition_popup {
     font-family: $font-body;
     font-weight: 300;
@@ -201,6 +201,7 @@ body {
         margin: 0;
     }
 }
+
 
 section {
     margin: 2em 0;
@@ -386,6 +387,43 @@ article {
         margin-top: 1em;
         margin-bottom: 1em;
     }
+    video {
+        width: 100%;
+        max-height: 70vh;
+    }
+    img {
+        max-width: 100%;
+        max-height: 30em;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        object-fit: contain;
+        overflow: hidden;
+        border-radius: 3px;
+        margin: 3em auto;
+    }
+    figure {
+        margin-bottom: 2em;
+        >img, >video {
+            margin-bottom: 1em;
+        }
+        figcaption {
+            font-family: $font-body;
+            font-style: italic;
+            text-align: center;
+            line-height: 1.5;
+        }
+    }
+    table {
+        width: 100%;
+        tr, td, th {
+            border: 1px solid var(--border-weak);
+        }
+        td, th {
+            padding: 0.5em;
+        }
+    }
+
 }
 
 // ------------------------------------------------ //
@@ -424,10 +462,8 @@ a.header-link {
 .container img {
     display: block;
     opacity: 0;
-    border-radius: 3px;
     -webkit-animation: 0.5s ease 0s normal forwards 1 fadein;
     animation: 0.5s ease 0s normal forwards 1 fadein;
-    margin: 3em 0;
 }
 
 img.loaded {
@@ -599,19 +635,6 @@ nav {
     top: 0;
     background-color: var(--background);
     z-index: 100000;
-}
-
-article {
-    video {
-        width: 100%;
-    }
-
-    img {
-        width: 100%;
-        max-height: 30em;
-        object-fit: contain;
-        overflow: hidden;
-    }
 }
 
 .social {

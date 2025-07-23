@@ -1,0 +1,8 @@
+<figure>
+    <video autoplay loop muted {% if controls %}controls{% endif %}>
+        <source type="video/webm" src="{{src}}">
+        </source>
+        <p>Your browser does not support the video element.</p>
+    </video>
+    {% if caption %}<figcaption>{{caption}}</figcaption>{% endif %}
+</figure>

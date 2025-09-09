@@ -1,6 +1,11 @@
 <figure>
     <video autoplay loop muted {% if controls %}controls{% endif %}>
+        {% set type = src | split(pat=".") | last %}
+        {% if type == "webm" %}
         <source type="video/webm" src="{{src}}">
+        {% elif type == "mp4" %}
+        <source type="video/mp4" src="{{src}}">
+        {% endif %}
         </source>
         <p>Your browser does not support the video element.</p>
     </video>

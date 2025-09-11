@@ -12,7 +12,7 @@
 // Variables and Mixins
 $break-small: 500px; // at what point the site becomes "mobile"
 
-$base-font-size: 18px;
+$base-font-size: 16px;
 
 $font-body: "Source Serif 4", serif;
 $font-title: "Inter", sans-serif;
@@ -211,7 +211,7 @@ section {
     box-sizing: border-box;
     padding: 0 1em;
     min-height: 100vh;
-    max-width: 800px;
+    max-width: 700px;
     width: 100%;
     margin: 0 auto;
 
@@ -363,7 +363,7 @@ pre {
 
     code {
         padding: 0;
-        font-size: 100%;
+        font-size: 80%;
         color: inherit;
         background-color: transparent;
     }

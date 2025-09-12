@@ -266,6 +266,20 @@ section {
         >p, .footnote-definition>p {
             margin: 1em 0;
         }
+
+        .footnote-reference a {
+            text-decoration: none;
+            font-weight: 600;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        p a {
+           text-decoration: underline;
+           text-decoration-thickness: 0.8px;
+           text-underline-offset: 2px;
+        }
     }
 }
 
@@ -531,8 +545,8 @@ footer {
     p {
         text-align: center;
         display: block;
-        font-size: 0.7em;
-        color: var(--contrast-weak);
+        font-size: 0.8em;
+        color: var(--contrast);
         font-family: $font-title;
         opacity: 0.5;
 

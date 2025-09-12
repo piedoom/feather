@@ -7,6 +7,7 @@
   definition_popup.style.opacity = 0;
   definition_popup.style.transition = "200ms opacity ease";
   definition_popup.style.display = "none";
+  definition_popup.style.lineHeight = 1.5;
   definition_popup.id = ID;
   document.body.append(definition_popup);
 

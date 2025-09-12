@@ -678,11 +678,12 @@ nav {
 }
 
 #definition_popup {
-    font-size: 1em;
+    font-size: 0.9em;
     background-color: var(--background);
-    color: var(--contrast);
+    color: var(--contrast-weak);
     border: var(--border) 1px solid;
     padding: 1em;
     border-radius: 5px;
     max-width: 24em;
+    font-family: $font-body;
 }

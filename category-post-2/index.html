@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+    <!-- Enable responsiveness on mobile devices-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>feather theme</title>
+    <meta name="description" content="">
+
+    
+    
+
+    
+<meta property="og:title" content="Categories part 2">
+<meta property="og:description" content="">
+<meta property="og:url" content="https:&#x2F;&#x2F;feather.doomy.org&#x2F;category-post-2&#x2F;">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="feather theme">
+
+
+
+    <!-- css -->
+    <noscript>
+        <style>
+            .theme-switcher {
+                display: none;
+            }
+        </style>
+    </noscript>
+    <link rel="stylesheet" href="/reset.css">
+    <link rel="stylesheet" href="/feather.css">
+    
+    
+    <link rel="stylesheet" href="/syntax-theme-light.css" media="screen" />
+    <link rel="stylesheet" href="/syntax-theme-dark.css" media="screen and (prefers-color-scheme: dark)" />
+    
+    
+
+    <link rel="stylesheet" id="syntax" />
+
+    
+
+    
+
+    
+    
+</head>
+
+<body >
+    <div class="root">
+
+        <nav>
+            <div class="flex padded">
+                <div class="flex fill vcenter">
+                    <a href="/">
+                        <h4>feather theme</h4>
+                    </a>
+                </div>
+                
+                <button class="theme-switcher" aria-label="Switch themes"></button>
+                
+            </div>
+            
+            <div class='header-image' style='background-image: url(/theme_images/default.gif);'>
+            </div>
+            
+        </nav>
+
+
+
+        
+<div class='container'>
+	<section class="post">
+		<div class="title-and-info">
+			<h2>Categories part 2</h2>
+			<div class="info">
+				<span>2018 Jan 05</span>
+
+				
+
+				
+			</div>
+		</div>
+		<article>
+			
+			
+			
+			
+
+			
+
+
+			<h1 id="categories-and-tags">Categories and tags</h1>
+<p>Look, you can click the category up there to see more posts like this!</p>
+
+			
+
+
+		</article>
+	</section>
+	
+	<div id="cusdis">
+		
+	</div>
+</div>
+
+
+        <footer>
+            
+            <p>
+                Feather theme by <a href="https://doomy.org">doomy</a>&nbsp;&nbsp;-&nbsp;&nbsp; Built with <a
+                    href="https://getzola.org">Zola</a>
+            </p>
+            
+        </footer>
+    </div>
+    
+    <script>
+        function change_theme(theme) {
+            if (theme == "light") {
+                document.body.classList.remove("dark");
+                document.body.classList.add("light");
+                document.querySelector('#syntax').href = '/syntax-theme-light.css';
+            } else if (theme == "dark") {
+                document.body.classList.add("dark");
+                document.body.classList.remove("light");
+                document.querySelector('#syntax').href = '/syntax-theme-dark.css';
+            }
+            localStorage.setItem("theme", theme);
+        }
+
+        window.addEventListener('load', () => {
+            // Select the button
+            const theme = (function () {
+                const stored = localStorage.getItem("theme");
+                if (stored == "null") {
+                    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                        return "dark";
+                    } else {
+                        return "light";
+                    }
+                } else {
+                    return stored;
+                }
+            })();
+
+            change_theme(theme);
+
+            // Listen for a click on the button
+            document.querySelector(".theme-switcher").addEventListener("click", function () {
+                if (!document.body.classList.contains("dark")) {
+                    change_theme("dark");
+                } else {
+                    change_theme("light");
+                }
+            });
+
+        });
+    </script>
+    
+    <script src="/js/footnote.js"></script>
+</body>
+
+</html>

@@ -60,11 +60,19 @@
 
         <nav>
             <div class="flex padded">
-                <div class="flex fill vcenter">
+                <div class="flex vcenter gap-large">
                     <a href="/">
                         <h4>{% if config.title %}{{ config.title }}{% else %}Home{% endif %}</h4>
                     </a>
+                    {% if config.extra.feather.links %}
+                    <div class="flex fill gap-medium">
+                    {% for link in config.extra.feather.links %}
+                        <a href={{link.url}} {% if link.target_blank %} target="_blank" {% endif %} >{{link.title}}</a>
+                    {% endfor %}
+                    </div>
+                    {% endif %}
                 </div>
+                <div class="flex fill"></div>
                 {% if not config.extra.feather.theme %}
                 <button class="theme-switcher" aria-label="Switch themes"></button>
                 {% endif %}

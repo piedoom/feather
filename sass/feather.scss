@@ -211,7 +211,7 @@ section {
     box-sizing: border-box;
     padding: 0 1em;
     min-height: 100vh;
-    max-width: 700px;
+    max-width: 720px;
     width: 100%;
     margin: 0 auto;
 
@@ -528,6 +528,24 @@ img.loaded {
     }
 }
 
+nav a[target=_blank] {
+    &::after {
+        content: url("data:image/svg+xml,%3Csvg viewBox='0 0 7 7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.04261 6.80966L0.377841 6.14489L5.32102 1.19318H1.50284L1.51136 0.272727H6.90625V5.67614H5.97727L5.9858 1.85795L1.04261 6.80966Z' fill='black'/%3E%3C/svg%3E%0A"); 
+        display: inline-block;
+        height: 0.5em;
+        padding-inline: 0.4em;
+        aspect-ratio: 1;
+        line-height: 1;
+        vertical-align: text-top;
+    }
+}
+
+.dark nav a[target=_blank]::after {
+    @media (prefers-color-scheme: dark) {
+        filter: invert(100%);
+    }
+}
+
 .dark .theme-switcher {
     &::before {
         content: "☽";
@@ -618,6 +636,14 @@ sup.footnote-reference {
     &.gap {
         gap: 1em;
     }
+
+    &.gap-medium {
+        gap: 2em;
+    }
+    
+    &.gap-large {
+        gap: 4em;
+    }
 }
 
 .secondary {
@@ -649,6 +675,10 @@ nav {
     top: 0;
     background-color: var(--background);
     z-index: 100000;
+
+    a {
+        color: inherit;
+    }
 }
 
 .social {

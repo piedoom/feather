@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>feather theme - yeah</title>
+    <link href="https://feather.doomy.org/tags/yeah/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://feather.doomy.org/"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2018-01-06T00:00:00+00:00</updated>
+    <id>https://feather.doomy.org/tags/yeah/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Categories yeah!</title>
+        <published>2018-01-06T00:00:00+00:00</published>
+        <updated>2018-01-06T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://feather.doomy.org/category-post/" type="text/html"/>
+        <id>https://feather.doomy.org/category-post/</id>
+        
+        <content type="html">&lt;h1 id=&quot;categories-and-tags&quot;&gt;Categories and tags&lt;&#x2F;h1&gt;
+&lt;p&gt;Look, you can click the category up there to see more posts like this!&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>
